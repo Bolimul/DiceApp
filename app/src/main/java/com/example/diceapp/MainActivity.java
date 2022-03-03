@@ -1,31 +1,41 @@
 package com.example.diceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ImageView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-Button logOutput;
+    Button diceButton;
+    TypedArray dices;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        logOutput = findViewById(R.id.logOutput);
-        logOutput.setOnClickListener(this);
+        diceButton = findViewById(R.id.diceButton);
+        diceButton.setOnClickListener(this);
+
+        dices = getResources().obtainTypedArray(R.array.diceList);
     }
 
     @Override
     public void onClick(View v)
     {
-        EditText number = findViewById(R.id.phoneNumber);
-        Toast.makeText(this, number.getText().toString(), Toast.LENGTH_SHORT).show();
+        ImageView firstDice = findViewById(R.id.firstDice);
+        ImageView secondDice = findViewById(R.id.secondDice);
+        Random rand = new Random();
+        int firstRandomNum = rand.nextInt(dices.length()-1) + 1;
+        int secondRandomNum = rand.nextInt(dices.length()-1) + 1;
+        firstDice.setImageDrawable(AppCompatResources.getDrawable(this, dices.getResourceId(firstRandomNum, 0)));
+        secondDice.setImageDrawable(AppCompatResources.getDrawable(this, dices.getResourceId(secondRandomNum, 0)));
     }
 
 
