@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer-array name="diceList">
+    <integer-array name="diceTypeList">
         <item>@drawable/dice1</item>
         <item>@drawable/dice2</item>
         <item>@drawable/dice3</item>
         <item>@drawable/dice4</item>
         <item>@drawable/dice5</item>
         <item>@drawable/dice6</item>
+    </integer-array>
+    <integer-array name="dicesImageViews">
+        <item>@id/firstDice</item>
+        <item>@id/secondDice</item>
     </integer-array>
 </resources>
