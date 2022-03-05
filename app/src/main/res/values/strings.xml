@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Dice App</string>
+    <string name="background_image">Background Image</string>
+    <string name="top_image">Top Image</string>
+    <string name="first_dice">First Dice</string>
+    <string name="second_dice">Second Dice</string>
+    <string name="button_to_roll_the_dices">Button to roll the dices</string>
+    <string name="roll_the_dice_text">Dice</string>
 </resources>
